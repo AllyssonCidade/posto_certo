@@ -62,6 +62,38 @@ Para iniciar um projeto utilizando este boilerplate, siga os passos abaixo:
       https://jestjs.io/
       https://callstack.github.io/react-native-testing-library/
 
+
+******** Observações *********
+Desta forma estão sendo renderizados os componentes no lugar das screens, você deverá criar novas screens e adicionar os componentes a ela e em seguida adicionar essas screens no local onde etão sendo renderizados os componentes atuais no navigation: index e interfaces.
+
+Você também deve se atentar a condição de estilização das tabs pois estão sendo adicionadas imagens vindas do Feater e é possível alteralas e adicionar tudo personalizado.
+Veja:
+
+   <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarActiveTintColor: 'tomato',    // cor da tab que está selecionada
+        tabBarInactiveTintColor: 'gray',   // cor da tab inativa
+        tabBarIcon: ({ color, size }) => {
+          let iconName: keyof typeof Feather.glyphMap   //tipagem do icone
+
+          if (route.name === 'MeuComponente') {   // verifica se o nome da tab é MeuComponente ( troque pela sua screen)
+            iconName = 'circle'   // caso tenha uma tab com aquele nome, deve ser mostrado um circulo que é um icone vindo do Feather
+          } else if (route.name === 'Settings') {   // verifica se o nome da tab é Settings ( troque pela sua screen)
+            iconName = 'settings'   // igual o caso do circulo só que deve ser mostrado uma engrenagem
+          } else {
+            iconName = 'circle'   // caso não seja nehuma das opções anteriores será mostrado um circulo.
+          }
+
+          return <Feather name={iconName} size={size} color={color} />   //É renderizado sua tab com o nome, tamanho e cor escolhidos
+        },
+        tabBarLabelStyle: {   //a seguir ficarão as estilizações da tab
+          fontSize: 14,   //tamanho da fonte
+          marginBottom: 5   //uma pequena margem para baixo
+         //Adicione mais a sua preferência, assim como no CSS
+        }
+      })}
+    >
+
 ## Estrutura de Pastas
 
 Aqui está a estrutura de pastas do boilerplate:
