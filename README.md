@@ -20,17 +20,39 @@ Para iniciar um projeto utilizando este boilerplate, siga os passos abaixo:
    ```bash
    npm install
    ```
-
-4. **Inicie o Metro Bundler:**
-   ```bash
-   npx expo start
-   ```
-5. **Crie um novo Componente**
+   
+4. **Crie seu primeiro Componente**
     ```bash
    npm run generate
    ```
+5. **Substitua o nome do Componente na rota e faça a importação**
+   vá até navigation > index.tsx.
+    neste arquivo substitua onde está escrito MeuComponente pelo nome do seu primeiro componente(será ele renderizado inicialmente)
+   em seguida faça a importação dele no topo da pagina onde estão as importações
+   desta forma: 
 
+   import NomeDoSeuComponent from '../components/NomeDoSeuComponent'
+   
    Descreva qual o nome para ele que já será criada uma estrutura base para seu componente.
+
+7. **Adicione seu componente a interfaces(este local voce deverá colocar as rotas de tabs do seu app e deve criar um novo para as stacks quando for usar):**
+  Vá ate Navigation > interfaces
+   e adicione o nome do seu componente na PropStackRouter da mesma forma que estão os exemplos no arquivo
+
+8. **Substitua o nome do componente no index do navigation:**
+   
+          if (route.name === 'MeuComponente') {   
+            iconName = 'circle' 
+          } else if (route.name === 'Settings') {
+            iconName = 'settings'
+          } else {
+            iconName = 'circle'
+          }
+
+9. **Inicie o Metro Bundler:**
+   ```bash
+   npx expo start
+   ```
 
 6. **Realize testes**
    ```bash
