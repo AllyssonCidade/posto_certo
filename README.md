@@ -1,50 +1,101 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Meu Boilerplate React Native
 
-## Get started
+## Iniciando um Projeto
 
-1. Install dependencies
+Para iniciar um projeto utilizando este boilerplate, siga os passos abaixo:
 
+1. **Clone o repositório:**
+   Use o comando abaixo para clonar o repositório do boilerplate:
+   ```bash
+   git clone https://github.com/seuUsuario/seuBoilerplate.git MeuProjeto
+   ```
+
+2. **Navegue até o diretório do projeto:**
+   ```bash
+   cd MeuProjeto
+   ```
+
+3. **Instale as dependências:**
    ```bash
    npm install
    ```
 
-2. Start the app
-
+4. **Inicie o Metro Bundler:**
    ```bash
-    npx expo start
+   npx expo start
+   ```
+5. **Crie um novo Componente**
+    ```bash
+   npm run generate
    ```
 
-In the output, you'll find options to open the app in a
+   Descreva qual o nome para ele que já será criada uma estrutura base para seu componente.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+6. **Realize testes**
+   ```bash
+      npm run test
+   ```
+   é possível adicionar filtros e adicionais ao seu teste, verifique na documentação das biblitecas:
+      https://jestjs.io/
+      https://callstack.github.io/react-native-testing-library/
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Estrutura de Pastas
 
-## Get a fresh project
+Aqui está a estrutura de pastas do boilerplate:
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+app/
+  └── (tabs)
+       ├── __tests__
+       |          └──  index.tsx
+       └── index.tsx
+assets
+   └── (imagens estáticas, fontes, etc.)
+coverage
+   └── (arquivos de apoio para cobertura dos testes)
+generators
+   ├── templates
+         └── Component.tsx.hbs
+               ├── styles.ts.hbs
+               └── test.tsx.hbs
+   └── plopfile.js
+src/
+  ├── api
+  ├── components
+  ├── contexts
+  ├── navigation
+  |      ├── index.tsx
+  |      └── interfaces.tsx
+  ├── screens
+  ├── styles
+  ├── types
+  └── utils
+.eslintignore
+.eslintrc.json
+.gitignore
+.prettierignore
+.prettierrc.json
+README.md
+app.json
+babel.config.js
+eslint.config.mjs
+package-lock.json
+package.json
+plopfile.js
+teste-utils.js
+tsconfig.json
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-## Learn more
+### É isso. Você pode deve se atentar inicialmente a estrutura de rotas que será usada na sua aplicaçãp. Este boilerplate foi iniciado utilizando uma estrutura de tabs por questões de gosto pessoal (acho bem bonito e clean um app com tabs bem estruturadas).
 
-To learn more about developing your project with Expo, look at the following resources:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Contribuição
 
-## Join the community
+Sinta-se à vontade para contribuir com melhorias ou adições ao boilerplate. 
 
-Join our community of developers creating universal apps.
+## Licença
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
+https://www.linkedin.com/in/allysson-cidade/
