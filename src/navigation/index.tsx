@@ -15,7 +15,7 @@ const AppNavigation = () => {
         tabBarIcon: ({ color, size }) => {
           let iconName: keyof typeof Feather.glyphMap
 
-          if (route.name === 'Dir') {
+          if (route.name === 'MeuComponente') {
             iconName = 'folder'
           } else if (route.name === 'Settings') {
             iconName = 'settings'
@@ -32,7 +32,7 @@ const AppNavigation = () => {
       })}
     >
       <Tab.Screen
-        name="{MeuComponente}"
+        name="MeuComponente"
         component={MeuComponent}
         options={{ headerShown: false }}
       />
