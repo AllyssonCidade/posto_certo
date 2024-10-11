@@ -8,7 +8,7 @@ Para iniciar um projeto utilizando este boilerplate, siga os passos abaixo:
 1. **Clone o repositório:**
    Use o comando abaixo para clonar o repositório do boilerplate:
    ```bash
-   git clone https://github.com/seuUsuario/seuBoilerplate.git MeuProjeto
+   git clone https://github.com/AllyssonCidade/boilerplate-expo-app.git MeuProjeto
    ```
 
 2. **Navegue até o diretório do projeto:**
