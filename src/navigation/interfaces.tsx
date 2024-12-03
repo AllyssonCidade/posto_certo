@@ -5,7 +5,9 @@ export type RouteProps = {}
 
 //aqui devem ser colocadas e tipadas suas rotas com base no routeProps
 export type PropsStackRoutes = {
-  MeuComponente: undefined | RouteProps
+  Home: undefined | RouteProps
+  Feed: undefined | RouteProps
+  Profile: undefined | RouteProps
 }
 
 export type PropsScreensApp = NativeStackScreenProps<PropsStackRoutes>

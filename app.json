@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "boilerplate-apps-router",
-    "slug": "boilerplate-apps-router",
+    "name": "posto_certo",
+    "slug": "posto_certo",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/posto_certo_logo.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {

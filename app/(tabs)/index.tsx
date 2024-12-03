@@ -1,8 +1,14 @@
+import React from 'react'
+import { ThemeProvider } from 'styled-components/native'
+import { theme } from '../../theme'
 import AppNavigation from '@/src/navigation'
-import { StyleSheet } from 'react-native'
 
-export default function App() {
-  return <AppNavigation />
+const App: React.FC = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <AppNavigation />
+    </ThemeProvider>
+  )
 }
 
-const styles = StyleSheet.create({})
+export default App
