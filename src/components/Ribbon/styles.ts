@@ -10,3 +10,16 @@ export const Wrapper = styled.View`
   border-top-left-radius: 0;
   padding: 6px;
 `
+export const Title = styled.Text`
+  color: #f5f5f5;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+`
+
+export const Subtitle = styled.Text`
+  color: #f5f5f5;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+`

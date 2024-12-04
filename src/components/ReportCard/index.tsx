@@ -17,7 +17,7 @@ const ReportCard = () => (
         borderRadius: 16,
         height: 158,
         width: '100%',
-        paddingHorizontal: 12
+        paddingHorizontal: 1
       }}
     >
       <View>

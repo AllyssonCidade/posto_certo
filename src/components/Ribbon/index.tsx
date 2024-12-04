@@ -5,11 +5,13 @@ import React from 'react'
 export type RibbonProps = {
   title?: string
   location?: string
+  viewStyle?: ViewStyle
 }
-const Ribbon = ({ title, location }: RibbonProps) => (
-  <S.Wrapper testID="wrapper">
-    <Text>{title}</Text>
-    <Text>{location}</Text>
+
+const Ribbon = ({ title, location, viewStyle }: RibbonProps) => (
+  <S.Wrapper style={viewStyle} testID="wrapper">
+    <S.Title>{title}</S.Title>
+    <S.Subtitle>{location}</S.Subtitle>
   </S.Wrapper>
 )
 

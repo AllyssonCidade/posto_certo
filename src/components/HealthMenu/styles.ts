@@ -5,6 +5,7 @@ export const Wrapper = styled.View`
   justify-content: space-between;
   width: 100%;
   gap: 16px;
+  margin-bottom: 22px;
 `
 export const Title = styled.Text`
   color: #333;

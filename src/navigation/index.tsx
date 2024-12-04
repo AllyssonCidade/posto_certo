@@ -38,7 +38,15 @@ const AppNavigation = () => {
       })}
     >
       <Tab.Screen name="Home" component={Home} options={{ headerShown: false }} />
-      <Tab.Screen name="Feed" component={Feed} options={{ headerShown: false }} />
+      <Tab.Screen
+        name="Feed"
+        component={Feed}
+        options={{
+          headerShown: true,
+          headerTitleAlign: 'center',
+          headerTitle: 'Acontecimentos Próximos'
+        }}
+      />
       <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
     </Tab.Navigator>
   )

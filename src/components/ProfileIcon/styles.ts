@@ -1,9 +1,20 @@
-import styled from 'styled-components/native'
+import { StyleSheet } from 'react-native'
 
-export const Wrapper = styled.View`
-  align-items: center;
-  background-color: rebeccapurple;
-  width: 36px;
-  height: 36px;
-  border-radius: 20px;
-`
+const styles = StyleSheet.create({
+  wrapper: {
+    alignItems: 'center',
+    backgroundColor: 'rebeccapurple'
+  },
+  small: {
+    height: 36,
+    width: 36,
+    borderRadius: 20
+  },
+  medium: {
+    height: 40,
+    width: 40,
+    borderRadius: 20
+  }
+})
+
+export default styles
