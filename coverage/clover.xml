@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1733244968263" clover="3.2.0">
-  <project timestamp="1733244968265" name="All files">
-    <metrics statements="61" coveredstatements="53" conditionals="6" coveredconditionals="0" methods="16" coveredmethods="14" elements="83" coveredelements="67" complexity="0" loc="61" ncloc="61" packages="16" files="29" classes="29"/>
+<coverage generated="1733338650083" clover="3.2.0">
+  <project timestamp="1733338650083" name="All files">
+    <metrics statements="101" coveredstatements="90" conditionals="9" coveredconditionals="3" methods="22" coveredmethods="17" elements="132" coveredelements="110" complexity="0" loc="101" ncloc="101" packages="20" files="37" classes="37"/>
     <package name="posto_certo">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="styled.d.ts" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\styled.d.ts">
@@ -16,8 +16,8 @@
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.tsx" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\app\(tabs)\index.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
       </file>
     </package>
     <package name="posto_certo.src.components.Actions">
@@ -40,8 +40,8 @@
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.tsx" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\BannerAction\index.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
         <line num="25" count="4" type="stmt"/>
       </file>
       <file name="styles.ts" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\BannerAction\styles.ts">
@@ -59,6 +59,38 @@
       <file name="styles.ts" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\Button\styles.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="posto_certo.src.components.Carousel">
+      <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="index.tsx" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\Carousel\index.tsx">
+        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\Carousel\styles.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="posto_certo.src.components.HeadPublish">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\HeadPublish\index.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\HeadPublish\styles.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
       </file>
     </package>
     <package name="posto_certo.src.components.HealthIcon">
@@ -85,19 +117,56 @@
       <file name="styles.ts" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\HealthMenu\styles.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="3" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="posto_certo.src.components.Nearby">
+      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\Nearby\index.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\Nearby\styles.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="posto_certo.src.components.Post">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\Post\index.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="29" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="38" count="4" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
+        <line num="53" count="3" type="stmt"/>
+      </file>
+      <file name="styles.ts" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\Post\styles.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
       </file>
     </package>
     <package name="posto_certo.src.components.ProfileIcon">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
       <file name="index.tsx" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\ProfileIcon\index.tsx">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="10" count="3" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="8" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="6" type="stmt"/>
       </file>
       <file name="styles.ts" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\ProfileIcon\styles.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="4" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
       </file>
     </package>
     <package name="posto_certo.src.components.ReportCard">
@@ -113,15 +182,17 @@
       </file>
     </package>
     <package name="posto_certo.src.components.Ribbon">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.tsx" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\Ribbon\index.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="9" count="5" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
       </file>
       <file name="styles.ts" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\Ribbon\styles.ts">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="5" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="8" type="stmt"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="20" count="8" type="stmt"/>
       </file>
     </package>
     <package name="posto_certo.src.components.SearchBar">
@@ -135,17 +206,17 @@
       <file name="styles.ts" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\components\SearchBar\styles.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
       </file>
     </package>
     <package name="posto_certo.src.navigation">
-      <metrics statements="12" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <metrics statements="12" coveredstatements="3" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="index.tsx" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\navigation\index.tsx">
-        <metrics statements="12" coveredstatements="4" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <metrics statements="12" coveredstatements="3" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
         <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -157,11 +228,15 @@
       </file>
     </package>
     <package name="posto_certo.src.screens.Feed">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.tsx" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\screens\Feed\index.tsx">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
       </file>
       <file name="styles.ts" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\screens\Feed\styles.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -169,11 +244,12 @@
       </file>
     </package>
     <package name="posto_certo.src.screens.Home">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.tsx" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\screens\Home\index.tsx">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
       </file>
       <file name="styles.ts" path="C:\Users\LEILO\Allysson\Projetos\posto_certo\src\screens\Home\styles.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
