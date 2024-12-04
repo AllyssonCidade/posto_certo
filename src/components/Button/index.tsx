@@ -1,4 +1,4 @@
-import { GestureResponderEvent, TouchableOpacity, Text, ViewStyle } from 'react-native'
+import { GestureResponderEvent, TouchableOpacity, Text, ViewStyle, TextStyle } from 'react-native'
 import styles from './styles'
 
 export type ButtonProps = {
@@ -8,6 +8,7 @@ export type ButtonProps = {
   onPress?: (event: GestureResponderEvent) => void
   title?: string
   style?: ViewStyle
+  textStyle?: TextStyle
 }
 
 export function Button({
@@ -16,6 +17,7 @@ export function Button({
   color = 'blue',
   onPress,
   style,
+  textStyle,
   ...props
 }: ButtonProps) {
   return (
@@ -24,7 +26,13 @@ export function Button({
       onPress={onPress}
       {...props}
     >
-      <Text style={[styles.text, { fontSize: styles[size].fontSize, color: styles[color].color }]}>
+      <Text
+        style={[
+          styles.text,
+          { fontSize: styles[size].fontSize, color: styles[color].color },
+          textStyle
+        ]}
+      >
         {children}
       </Text>
     </TouchableOpacity>

@@ -1,8 +1,7 @@
 import styled from 'styled-components/native'
 
-export const Wrapper = styled.View`
+export const Wrapper = styled.ScrollView`
   flex: 1;
-  width: 100%;
+  gap: 24px;
   background-color: #ffffff;
-  gap: 16px;
 `

@@ -1,8 +1,9 @@
 import * as S from './styles'
 import { Dimensions, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import HeadPublish from '../HeadPublish'
 import MyCarousel from '../Carousel'
+import { AirbnbRating } from 'react-native-elements'
 
 const entries = [
   {
@@ -34,18 +35,30 @@ const textos = [
     text: 'Fui atendido na UBS Nascer do Sol e fiquei frustrado com a falta de atenção do médico. A equipe de enfermagem, por outro lado, foi excelente e muito solícita. A unidade estava limpa e bem organizada.'
   }
 ]
+
 const Post = () => {
   const width = Dimensions.get('window').width
+  const [rating, setRating] = useState(0)
 
   return (
     <S.Wrapper testID="wrapper">
-      <HeadPublish name="Clarice Lispector" job="Escritor" />
-      <View style={styles.carouselContainer}>
-        <MyCarousel entries={entries} />
+      <View style={{ marginBottom: 16 }}>
+        <HeadPublish name="Clarice Lispector" job="Escritor" />
+        <View style={styles.carouselContainer}>
+          <MyCarousel entries={entries} />
+        </View>
+        <Text numberOfLines={4} ellipsizeMode="tail" style={styles.text}>
+          {textos[0].text}
+        </Text>
+        <AirbnbRating
+          count={5}
+          reviews={[]}
+          defaultRating={rating}
+          size={20}
+          onFinishRating={setRating}
+          showRating={false}
+        />
       </View>
-      <Text numberOfLines={4} ellipsizeMode="tail" style={styles.text}>
-        {textos[0].text}
-      </Text>
     </S.Wrapper>
   )
 }
@@ -61,7 +74,8 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 14,
     paddingHorizontal: 12,
-    marginTop: 8
+    marginTop: 8,
+    marginBottom: 16
   }
 })
 

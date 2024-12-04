@@ -47,7 +47,11 @@ const AppNavigation = () => {
           headerTitle: 'Acontecimentos Próximos'
         }}
       />
-      <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{ headerShown: false, headerTransparent: false }}
+      />
     </Tab.Navigator>
   )
 }
