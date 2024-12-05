@@ -24,8 +24,4 @@ export const email = styled.Text`
 `
 export const BottomContainer = styled.View`
   width: 100%;
-  align-items: center;
-  justify-content: center;
-  height: 50%;
-  background-color: #f5f5f5;
 `
