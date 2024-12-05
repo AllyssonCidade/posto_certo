@@ -4,12 +4,18 @@ import React from 'react'
 import { Feather } from '@expo/vector-icons'
 import ProfileIcon from '../ProfileIcon'
 
-const SearchBar = () => (
+export type SearchBarProps = {
+  placeholder?: string
+  iconLeft?: keyof typeof Feather.glyphMap
+  iconRight?: keyof typeof Feather.glyphMap
+  profile?: boolean
+}
+const SearchBar = ({ iconLeft, iconRight, placeholder, profile }: SearchBarProps) => (
   <S.Wrapper testID="wrapper">
-    <S.Input placeholder="Encontre o que procura" />
-    <Feather name="search" size={30} color="black" style={styes.search} />
-    <Feather name="menu" size={30} color="black" style={styes.menu} />
-    <ProfileIcon style={styes.profile} />
+    <S.Input placeholder={placeholder} />
+    {iconRight && <Feather name={iconRight} size={30} color="black" style={styes.search} />}
+    {iconLeft && <Feather name={iconLeft} size={30} color="black" style={styes.menu} />}
+    {profile && <ProfileIcon style={styes.profile} />}
   </S.Wrapper>
 )
 const styes = StyleSheet.create({

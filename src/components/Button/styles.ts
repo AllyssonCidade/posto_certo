@@ -26,6 +26,12 @@ const styles = StyleSheet.create({
   },
   xlarge: {
     height: 32,
+    width: '45%',
+    fontWeight: 'bold',
+    fontSize: 13
+  },
+  xxlarge: {
+    height: 32,
     width: '100%',
     fontWeight: 700,
     fontSize: 20

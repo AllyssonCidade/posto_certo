@@ -2,11 +2,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Feather } from '@expo/vector-icons'
 import { PropsStackRoutes } from './interfaces'
-import Home from '../screens/Home'
 import Feed from '../screens/Feed'
-import Profile from '../screens/Profile'
 import { useTheme } from 'styled-components'
 import ProfileStack from '../screens/Profile/profileStack'
+import HomeStack from '../screens/Home/homeStack'
 
 const Stack = createNativeStackNavigator<PropsStackRoutes>()
 const Tab = createBottomTabNavigator<PropsStackRoutes>()
@@ -22,7 +21,7 @@ const AppNavigation = () => {
         tabBarIcon: ({ color, size }) => {
           let iconName: keyof typeof Feather.glyphMap
 
-          if (route.name === 'Home') {
+          if (route.name === 'HomeStack') {
             iconName = 'folder'
           } else if (route.name === 'Feed') {
             iconName = 'layout'
@@ -38,7 +37,7 @@ const AppNavigation = () => {
         }
       })}
     >
-      <Tab.Screen name="Home" component={Home} options={{ headerShown: false }} />
+      <Tab.Screen name="HomeStack" component={HomeStack} options={{ headerShown: false }} />
       <Tab.Screen
         name="Feed"
         component={Feed}

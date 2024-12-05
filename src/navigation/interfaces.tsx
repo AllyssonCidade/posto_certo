@@ -10,6 +10,9 @@ export type PropsStackRoutes = {
   Profile: undefined | RouteProps
   EditProfile: undefined | RouteProps
   ProfileStack: undefined | RouteProps
+  UnitHealth: undefined | RouteProps
+  HomeStack: undefined | RouteProps
+  MakeReport: undefined | RouteProps
 }
 
 export type PropsScreensApp = NativeStackScreenProps<PropsStackRoutes>

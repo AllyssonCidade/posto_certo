@@ -6,6 +6,9 @@ export type RootStackParamList = {
   Feed: undefined
   Profile: undefined
   EditProfile: undefined
+  UnitHealth: undefined
+  HomeStack: undefined
+  MakeReport: undefined
 }
 
 export type HealthIconProps = {

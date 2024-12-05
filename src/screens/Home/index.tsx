@@ -9,7 +9,7 @@ import { StyleSheet } from 'react-native'
 
 const Home = () => (
   <S.Wrapper contentContainerStyle={styles.scrollView} testID="wrapper">
-    <SearchBar />
+    <SearchBar profile iconRight="search" iconLeft="menu" />
     <ReportCard />
     <HealthMenu />
     <Actions />
