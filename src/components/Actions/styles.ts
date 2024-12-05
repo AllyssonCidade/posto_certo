@@ -4,7 +4,7 @@ export const Wrapper = styled.View`
   width: 100%;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 22px;
+  margin-bottom: 34px;
 `
 export const HeadContainer = styled.View`
   flex-direction: row;

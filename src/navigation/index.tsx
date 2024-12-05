@@ -6,6 +6,7 @@ import Home from '../screens/Home'
 import Feed from '../screens/Feed'
 import Profile from '../screens/Profile'
 import { useTheme } from 'styled-components'
+import ProfileStack from '../screens/Profile/profileStack'
 
 const Stack = createNativeStackNavigator<PropsStackRoutes>()
 const Tab = createBottomTabNavigator<PropsStackRoutes>()
@@ -48,9 +49,9 @@ const AppNavigation = () => {
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{ headerShown: false, headerTransparent: false }}
+        name="ProfileStack"
+        component={ProfileStack}
+        options={{ headerShown: false, headerTransparent: false, title: 'Profile' }}
       />
     </Tab.Navigator>
   )

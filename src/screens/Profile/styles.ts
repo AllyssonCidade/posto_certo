@@ -22,6 +22,7 @@ export const email = styled.Text`
   color: #f5f5f5;
   font-size: 14px;
 `
-export const BottomContainer = styled.View`
+export const BottomContainer = styled.ScrollView`
   width: 100%;
+  background-color: #ffffff;
 `

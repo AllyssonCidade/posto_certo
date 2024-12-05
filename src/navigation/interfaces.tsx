@@ -8,6 +8,8 @@ export type PropsStackRoutes = {
   Home: undefined | RouteProps
   Feed: undefined | RouteProps
   Profile: undefined | RouteProps
+  EditProfile: undefined | RouteProps
+  ProfileStack: undefined | RouteProps
 }
 
 export type PropsScreensApp = NativeStackScreenProps<PropsStackRoutes>

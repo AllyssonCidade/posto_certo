@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 export const Wrapper = styled.View`
   width: 100%;
   align-items: center;
-  margin-bottom: 22px;
+  margin-bottom: 34px;
 `
 export const HeadContainer = styled.View`
   flex-direction: row;
@@ -39,7 +39,7 @@ export const Image = styled.Image`
 `
 export const CardTitle = styled.Text`
   color: #333;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 `
 export const cardText = styled.Text`

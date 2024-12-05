@@ -1,12 +1,24 @@
 import { Feather } from '@expo/vector-icons'
 import * as S from './styles'
 import React from 'react'
-import { StatusBar, View } from 'react-native'
+import { View } from 'react-native'
 import { Avatar, ListItem } from 'react-native-elements'
 import { Button } from '@/src/components/Button'
+import { LogBox } from 'react-native'
+import { useNavigation } from 'expo-router'
+import { RootStackParamList } from '@/src/types'
+import { NativeStackNavigationProp } from 'react-native-screens/lib/typescript/native-stack/types'
 
+type ProfileScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Profile'>
+
+//IGNORANDO WARNS VINDOS DO react-native-elements, AGUARDANDO ATUALIZAÇÃO DE FIX PARA REMOÇÃO DAS DEFAULTPROPS.
+LogBox.ignoreLogs(['Warning: TextElement: Support for defaultProps will be removed'])
 const Profile = () => {
-  const [expanded, setExpanded] = React.useState(true)
+  const [expandedMore, setExpandedMore] = React.useState(true)
+  const [expandedPref, setExpandedPref] = React.useState(true)
+
+  const navigation = useNavigation<ProfileScreenNavigationProp>()
+
   return (
     <S.Wrapper testID="wrapper">
       <S.TopContainer>
@@ -27,22 +39,22 @@ const Profile = () => {
           size="medium"
           color="white"
           title="Editar Perfil"
-          onPress={() => {}}
+          onPress={() => navigation.navigate('EditProfile')}
         >
           Editar Perfil
         </Button>
       </S.TopContainer>
 
-      <S.BottomContainer>
+      <S.BottomContainer showsVerticalScrollIndicator={false}>
         <ListItem.Accordion
           content={
             <ListItem.Content>
-              <ListItem.Title>Mais Informações</ListItem.Title>
+              <ListItem.Title style={{ fontWeight: 'bold' }}>Mais Informações</ListItem.Title>
             </ListItem.Content>
           }
-          isExpanded={expanded}
+          isExpanded={expandedMore}
           onPress={() => {
-            setExpanded(!expanded)
+            setExpandedMore(!expandedMore)
           }}
         >
           <ListItem>
@@ -61,6 +73,35 @@ const Profile = () => {
             </ListItem.Content>
           </ListItem>
         </ListItem.Accordion>
+
+        <ListItem.Accordion
+          content={
+            <ListItem.Content>
+              <ListItem.Title style={{ fontWeight: 'bold' }}>Preferências</ListItem.Title>
+            </ListItem.Content>
+          }
+          isExpanded={expandedPref}
+          onPress={() => {
+            setExpandedPref(!expandedPref)
+          }}
+        >
+          <ListItem>
+            <ListItem.Content style={{ marginLeft: 20 }}>
+              <ListItem.Title>Notifações</ListItem.Title>
+            </ListItem.Content>
+          </ListItem>
+          <ListItem>
+            <ListItem.Content style={{ marginLeft: 20 }}>
+              <ListItem.Title>Dark Mode</ListItem.Title>
+            </ListItem.Content>
+          </ListItem>
+        </ListItem.Accordion>
+        <Button
+          textStyle={{ color: 'white', fontWeight: 'bold' }}
+          style={{ alignSelf: 'center', backgroundColor: 'red', marginTop: 20 }}
+        >
+          Logout
+        </Button>
       </S.BottomContainer>
     </S.Wrapper>
   )
