@@ -148,7 +148,7 @@ export default function EditProfile() {
         title="Submit"
         onPress={handleSubmit(onSubmit)}
         size="xlarge"
-        style={{ height: 48, marginBottom: -20 }}
+        style={{ height: 48, marginBottom: -20, alignSelf: 'center' }}
       >
         Salvar
       </Button>
