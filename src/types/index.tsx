@@ -9,6 +9,7 @@ export type RootStackParamList = {
   UnitHealth: undefined
   HomeStack: undefined
   MakeReport: undefined
+  LoginScreen: undefined
 }
 
 export type HealthIconProps = {

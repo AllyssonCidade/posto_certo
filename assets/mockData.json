@@ -1,0 +1,130 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "João Silva",
+      "email": "joao.silva@gmail.com",
+      "fotoperfil": "https://example.com/fotos/joao.jpg",
+      "isBetaUser": true
+    },
+    {
+      "id": 2,
+      "nome": "Maria Oliveira",
+      "email": "maria.oliveira@gmail.com",
+      "fotoperfil": "https://example.com/fotos/maria.jpg",
+      "isBetaUser": false
+    },
+    {
+      "id": 3,
+      "nome": "Carlos Pereira",
+      "email": "carlos.pereira@gmail.com",
+      "fotoperfil": "https://example.com/fotos/carlos.jpg",
+      "isBetaUser": true
+    },
+    {
+      "id": 4,
+      "nome": "Ana Souza",
+      "email": "ana.souza@gmail.com",
+      "fotoperfil": "https://example.com/fotos/ana.jpg",
+      "isBetaUser": false
+    }
+  ],
+  "unidades_de_saude": [
+    {
+      "id": 1,
+      "nome": "UBS Central",
+      "endereco": "Rua Saúde, 789, Belo Horizonte, MG",
+      "categoria": "UBS",
+      "telefone": "+55 31 1234-5678",
+      "horario_atendimento": {
+        "segunda": "08:00 - 17:00",
+        "terça": "08:00 - 17:00",
+        "quarta": "08:00 - 17:00",
+        "quinta": "08:00 - 17:00",
+        "sexta": "08:00 - 17:00",
+        "sabado": "09:00 - 12:00",
+        "domingo": "Fechado"
+      },
+      "exames": ["Sangue", "Urina", "Raio-X"],
+      "campanhas_ativas": ["Vacinação contra gripe", "Doação de sangue"],
+      "especialidades": ["Pediatria", "Clínico Geral", "Cardiologia"],
+      "dias_de_marcacao": ["Segunda", "Quarta", "Sexta"],
+      "servicos_adicionais": ["Atendimento odontológico", "Aconselhamento psicológico"],
+      "latitude": -19.9233,
+      "longitude": -43.9376,
+      "imagem_post": "https://example.com/imagens/ubs-central.jpg"
+    },
+    {
+      "id": 2,
+      "nome": "Hospital Regional Norte",
+      "endereco": "Avenida Saúde, 345, Recife, PE",
+      "categoria": "Público",
+      "telefone": "+55 81 2345-6789",
+      "horario_atendimento": {
+        "segunda": "08:00 - 17:00",
+        "terça": "08:00 - 17:00",
+        "quarta": "08:00 - 17:00",
+        "quinta": "08:00 - 17:00",
+        "sexta": "08:00 - 17:00",
+        "sabado": "10:00 - 15:00",
+        "domingo": "10:00 - 15:00"
+      },
+      "exames": ["Tomografia", "Mamografia", "Ultrassonografia"],
+      "campanhas_ativas": ["Campanha contra câncer de mama", "Vacinação infantil"],
+      "especialidades": ["Ginecologia", "Neurologia", "Ortopedia"],
+      "dias_de_marcacao": ["Segunda", "Terça", "Quinta"],
+      "servicos_adicionais": ["Urgência e emergência", "Atendimento domiciliar"],
+      "latitude": -8.0476,
+      "longitude": -34.8776,
+      "imagem_post": "https://example.com/imagens/hospital-norte.jpg"
+    },
+    {
+      "id": 3,
+      "nome": "Clínica Saúde Boa",
+      "endereco": "Rua Boa Saúde, 221, Fortaleza, CE",
+      "categoria": "Particular",
+      "telefone": "+55 85 1234-5678",
+      "horario_atendimento": {
+        "segunda": "08:00 - 17:00",
+        "terça": "08:00 - 17:00",
+        "quarta": "08:00 - 17:00",
+        "quinta": "08:00 - 17:00",
+        "sexta": "08:00 - 17:00",
+        "sabado": "10:00 - 15:00",
+        "domingo": "10:00 - 15:00"
+      },
+      "exames": ["Sangue", "Raio-X", "Eletrocardiograma"],
+      "campanhas_ativas": ["Campanha de prevenção ao diabetes", "Vacinação contra HPV"],
+      "especialidades": ["Cardiologia", "Pediatria", "Oftalmologia"],
+      "dias_de_marcacao": ["Terça", "Quinta", "Sábado"],
+      "servicos_adicionais": ["Atendimento home care", "Consulta online"],
+      "latitude": -3.7172,
+      "longitude": -38.5432,
+      "imagem_post": "https://example.com/imagens/clinica-saude.jpg"
+    },
+    {
+      "id": 4,
+      "nome": "Posto de Saúde Jardim",
+      "endereco": "Rua Jardim, 567, São Paulo, SP",
+      "categoria": "UBS",
+      "telefone": "+55 11 3456-7890",
+      "horario_atendimento": {
+        "segunda": "08:00 - 17:00",
+        "terça": "08:00 - 17:00",
+        "quarta": "08:00 - 17:00",
+        "quinta": "08:00 - 17:00",
+        "sexta": "08:00 - 17:00",
+        "sabado": "10:00 - 15:00",
+        "domingo": "10:00 - 15:00"
+      },
+      "exames": ["Raio-X", "Ultrassonografia", "Ecocardiograma"],
+      "campanhas_ativas": ["Vacinação contra Covid-19", "Prevenção de câncer de próstata"],
+      "especialidades": ["Ginecologia", "Urologia", "Endocrinologia"],
+      "dias_de_marcacao": ["Segunda", "Quarta", "Sexta"],
+      "servicos_adicionais": ["Atendimento emergencial", "Atendimento domiciliar"],
+      "latitude": -23.5505,
+      "longitude": -46.6333,
+      "imagem_post": "https://example.com/imagens/posto-jardim.jpg"
+    }
+  ]
+}

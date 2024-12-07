@@ -4,17 +4,19 @@ import { theme } from '../../theme'
 import AppNavigation from '@/src/navigation'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import 'react-native-get-random-values'
-
 import { LocationProvider } from '@/src/contexts/LocationContext'
+import { AuthProvider } from '@/src/contexts/AuthContext'
 
 const App: React.FC = () => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <LocationProvider>
-        <ThemeProvider theme={theme}>
-          <AppNavigation />
-        </ThemeProvider>
-      </LocationProvider>
+      <AuthProvider>
+        <LocationProvider>
+          <ThemeProvider theme={theme}>
+            <AppNavigation />
+          </ThemeProvider>
+        </LocationProvider>
+      </AuthProvider>
     </GestureHandlerRootView>
   )
 }

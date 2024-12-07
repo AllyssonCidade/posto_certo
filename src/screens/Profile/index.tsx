@@ -8,6 +8,7 @@ import { LogBox } from 'react-native'
 import { useNavigation } from 'expo-router'
 import { RootStackParamList } from '@/src/types'
 import { NativeStackNavigationProp } from 'react-native-screens/lib/typescript/native-stack/types'
+import { useAuth } from '@/src/contexts/AuthContext'
 
 type ProfileScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Profile'>
 
@@ -16,6 +17,16 @@ LogBox.ignoreLogs(['Warning: TextElement: Support for defaultProps will be remov
 const Profile = () => {
   const [expandedMore, setExpandedMore] = React.useState(true)
   const [expandedPref, setExpandedPref] = React.useState(true)
+  const { logout } = useAuth()
+
+  const handleLogout = async () => {
+    try {
+      await logout()
+      console.log('Usuário deslogado')
+    } catch (error) {
+      console.log('Erro ao fazer logout:', error)
+    }
+  }
 
   const navigation = useNavigation<ProfileScreenNavigationProp>()
 
@@ -97,6 +108,7 @@ const Profile = () => {
           </ListItem>
         </ListItem.Accordion>
         <Button
+          onPress={handleLogout}
           textStyle={{ color: 'white', fontWeight: 'bold' }}
           style={{ alignSelf: 'center', backgroundColor: 'red', marginTop: 20 }}
         >

@@ -13,6 +13,7 @@ export type PropsStackRoutes = {
   UnitHealth: undefined | RouteProps
   HomeStack: undefined | RouteProps
   MakeReport: undefined | RouteProps
+  LoginScreen: undefined | RouteProps
 }
 
 export type PropsScreensApp = NativeStackScreenProps<PropsStackRoutes>

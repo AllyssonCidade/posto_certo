@@ -13,7 +13,8 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
-    "generators/plopfile.js"
+    "generators/plopfile.js",
+    "firebaseConfig.js"
   ],
   "exclude": ["node_modules"]
 }
