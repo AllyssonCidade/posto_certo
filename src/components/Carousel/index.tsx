@@ -4,14 +4,21 @@ import Carousel from 'react-native-reanimated-carousel'
 import Animated from 'react-native-reanimated'
 import { Reason, ReasonText } from './styles'
 
-const MyCarousel = ({ entries }: any) => {
+const MyCarousel = ({ entries, location, title, reason, image }: any) => {
   const width = Dimensions.get('window').width
   return (
     <Carousel
       loop
       width={width}
-      height={width / 2}
+      height={width / 1.7}
       autoPlay={false}
+      style={{
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 8,
+        elevation: 5
+      }}
       data={entries}
       snapEnabled={true}
       onSnapToItem={(index) => console.log('current index:', index)}
@@ -32,11 +39,11 @@ const MyCarousel = ({ entries }: any) => {
           }}
         >
           <Image
-            source={item.image}
+            source={{ uri: image }}
             style={{
               width: '100%',
               height: '100%',
-              borderRadius: 12
+              borderRadius: 25
             }}
             resizeMode="cover"
           />
@@ -44,14 +51,15 @@ const MyCarousel = ({ entries }: any) => {
             viewStyle={{
               position: 'absolute',
               top: 0,
+              borderTopLeftRadius: 20,
               zIndex: 1,
               left: 10
             }}
-            location={item.location}
-            title={item.title}
+            location={location}
+            title={title}
           />
-          <Reason style={{ shadowColor: '#000', shadowRadius: 2, elevation: 2 }}>
-            <ReasonText>{item.reason}</ReasonText>
+          <Reason style={{ height: 30, backgroundColor: '#ffff' }}>
+            <ReasonText>{reason}</ReasonText>
           </Reason>
         </Animated.View>
       )}

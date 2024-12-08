@@ -2,16 +2,22 @@ import * as S from './styles'
 import React, { useRef, useState, useEffect } from 'react'
 import { ListItem } from 'react-native-elements'
 import { Button } from '@/src/components/Button'
-import { StyleSheet, Text, View, ActivityIndicator, TextInput } from 'react-native'
+import { StyleSheet, Text, View, ActivityIndicator, TextInput, Image } from 'react-native'
 import MapView, { Marker } from 'react-native-maps'
 import { useLocation } from '@/src/contexts/LocationContext'
-import {
-  GooglePlaceData,
-  GooglePlaceDetail,
-  GooglePlacesAutocomplete
-} from 'react-native-google-places-autocomplete'
+import { useAuth } from '@/src/contexts/AuthContext'
+import { getDatabase, ref, push, set } from 'firebase/database'
+import * as ImagePicker from 'expo-image-picker'
+import * as MediaLibrary from 'expo-media-library'
+import { useNavigation } from 'expo-router'
+import { NativeStackNavigationProp } from 'react-native-screens/lib/typescript/native-stack/types'
+import { RootStackParamList } from '@/src/types'
+
+type ProfileScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>
 
 const MakeReport = () => {
+  const { user } = useAuth()
+  const navigation = useNavigation<ProfileScreenNavigationProp>()
   const [expanded, setExpanded] = useState(false)
   const [region, setRegion] = useState({
     latitude: -23.55052,
@@ -20,11 +26,15 @@ const MakeReport = () => {
     longitudeDelta: 0.05
   })
 
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+  const [reason, setReason] = useState('') // Motivo do relato
+  const [locationName, setLocationName] = useState('') // Nome da unidade de saúde
+  const [locationAddress, setLocationAddress] = useState('') // Endereço ou localização
+  const [image, setImage] = useState<string | null>(null)
+
   const mapRef = useRef<MapView>(null)
   const { location } = useLocation()
-  if (!location) {
-    console.error('Erro: Location não foi carregada corretamente.')
-  }
 
   useEffect(() => {
     if (location && location.coords) {
@@ -37,64 +47,61 @@ const MakeReport = () => {
     }
   }, [location])
 
+  const pickImage = async () => {
+    const { status } = await MediaLibrary.requestPermissionsAsync()
+    if (status !== 'granted') {
+      alert('Desculpe, precisamos da permissão para acessar suas fotos!')
+      return
+    }
+
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1
+    })
+
+    if (!result.canceled) {
+      const uri = result.assets?.[0]?.uri
+      setImage(uri || null)
+    }
+  }
+
+  const handleConclude = () => {
+    const db = getDatabase()
+    const reportsRef = ref(db, 'reports')
+    const newReportRef = push(reportsRef)
+
+    set(newReportRef, {
+      title,
+      location: {
+        latitude: region.latitude,
+        longitude: region.longitude
+      },
+      reason,
+      text: description,
+      image,
+      locationName,
+      locationAddress,
+      userName: user?.displayName,
+      userEmail: user?.email,
+      userImage: user?.photoURL,
+      userJob: 'Estudante',
+      timestamp: Date.now()
+    })
+      .then(() => {
+        console.log('Relato enviado com sucesso!')
+        alert('Relato enviado com sucesso!')
+        navigation.navigate('Home')
+      })
+      .catch((error) => {
+        console.error('Erro ao enviar o relato: ', error)
+        alert('Erro ao enviar o relato.')
+      })
+  }
+
   return (
     <S.Wrapper testID="wrapper">
-      <GooglePlacesAutocomplete
-        placeholder="Buscar uma unidade de saude"
-        onPress={(data, details) => {
-          if (details) {
-            setRegion({
-              latitude: details.geometry.location.lat,
-              longitude: details.geometry.location.lng,
-              latitudeDelta: 0.01,
-              longitudeDelta: 0.01
-            })
-          } else {
-            console.error('Erro: Detalhes do local não disponíveis.')
-          }
-        }}
-        fetchDetails={true}
-        query={{
-          key: process.env.API_KEY_FAKE,
-          language: 'pt-br'
-        }}
-        styles={{
-          container: {
-            flex: 0,
-            alignItems: 'center'
-          },
-          textInputContainer: {
-            width: '100%',
-            alignItems: 'center',
-            height: 50
-          },
-          textInput: {
-            height: 38,
-            zIndex: 10,
-            color: '#5d5d5d',
-            fontSize: 16,
-            backgroundColor: '#f5f5f5',
-            borderRadius: 20
-          },
-          listView: {
-            zIndex: 9,
-            height: 100,
-            marginTop: 50,
-            position: 'absolute',
-            backgroundColor: '#f5f5f5'
-          },
-          row: {
-            backgroundColor: 'white',
-            padding: 13,
-            height: 44,
-            flexDirection: 'row'
-          },
-          description: {
-            color: '#1faadb'
-          }
-        }}
-      />
-
       <View style={{ width: '100%', height: 200, alignSelf: 'center' }}>
         {!location || !location.coords ? (
           <View style={styles.loadingContainer}>
@@ -117,32 +124,73 @@ const MakeReport = () => {
         content={
           <ListItem.Content>
             <ListItem.Title style={{ fontWeight: 'bold', marginBottom: 16 }}>
-              Tipos de Relato
+              Motivo do Relato
             </ListItem.Title>
           </ListItem.Content>
         }
         isExpanded={expanded}
         onPress={() => setExpanded(!expanded)}
       >
-        <ListItem>
-          <ListItem.Content style={{ marginLeft: 20 }}>
-            <ListItem.Title>Favoritos</ListItem.Title>
-          </ListItem.Content>
-        </ListItem>
-        <ListItem>
-          <ListItem.Content style={{ marginLeft: 20 }}>
-            <ListItem.Title>Atendimentos</ListItem.Title>
-          </ListItem.Content>
-        </ListItem>
-        <ListItem>
-          <ListItem.Content style={{ marginLeft: 20 }}>
-            <ListItem.Title>Exames</ListItem.Title>
-          </ListItem.Content>
-        </ListItem>
+        <TextInput
+          placeholder="Motivo (máx. 10 caracteres)"
+          style={{ width: '90%', alignSelf: 'center', marginBottom: 16 }}
+          value={reason}
+          maxLength={10}
+          onChangeText={setReason}
+        />
       </ListItem.Accordion>
 
+      <ListItem.Accordion
+        content={
+          <ListItem.Content>
+            <ListItem.Title style={{ fontWeight: 'bold', marginBottom: 16 }}>
+              Unidade de Saúde
+            </ListItem.Title>
+          </ListItem.Content>
+        }
+        isExpanded={expanded}
+        onPress={() => setExpanded(!expanded)}
+      >
+        <TextInput
+          placeholder="Nome da Unidade"
+          style={{ width: '90%', alignSelf: 'center', marginBottom: 16 }}
+          value={locationName}
+          maxLength={50}
+          onChangeText={setLocationName}
+        />
+        <TextInput
+          placeholder="Localização"
+          style={{ width: '90%', alignSelf: 'center', marginBottom: 16 }}
+          value={locationAddress}
+          maxLength={100}
+          onChangeText={setLocationAddress}
+        />
+      </ListItem.Accordion>
+
+      <View style={styles.imagePickerContainer}>
+        <Button
+          size="large"
+          color="white"
+          icon="camera"
+          style={{ width: '90%', alignSelf: 'center', marginBottom: 16 }}
+          title={image ? 'Trocar Imagem' : 'Selecionar Imagem'}
+          onPress={pickImage}
+        />
+        {image && (
+          <View style={styles.imagePreview}>
+            <Image source={{ uri: image }} style={styles.image} />
+          </View>
+        )}
+      </View>
+
       <View style={styles.infoCard}>
-        <TextInput placeholder="Descrição" style={styles.infoText} />
+        <TextInput
+          placeholder="Descrição (máx. 100 caracteres)"
+          style={styles.infoText}
+          value={description}
+          maxLength={100}
+          onChangeText={setDescription}
+        />
       </View>
 
       <Button
@@ -150,7 +198,7 @@ const MakeReport = () => {
         color="blue"
         title="Concluir"
         style={{ width: '90%', alignSelf: 'center' }}
-        onPress={() => console.log('Press')}
+        onPress={handleConclude}
       >
         Concluir
       </Button>
@@ -183,6 +231,19 @@ const styles = StyleSheet.create({
   infoText: {
     alignSelf: 'flex-start',
     padding: 8
+  },
+  imagePickerContainer: {
+    width: '90%',
+    alignSelf: 'center',
+    marginBottom: 20
+  },
+  imagePreview: {
+    marginTop: 10
+  },
+  image: {
+    width: 100,
+    height: 100,
+    borderRadius: 8
   }
 })
 

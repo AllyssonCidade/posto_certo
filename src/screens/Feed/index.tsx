@@ -13,15 +13,15 @@ const Feed = () => {
   return (
     <S.Wrapper contentContainerStyle={styles.scrollView} testID="wrapper">
       <Post />
-      <Post />
-      <Post />
-      <Post />
     </S.Wrapper>
   )
 }
 const styles = StyleSheet.create({
   scrollView: {
-    display: 'flex'
+    flex: 1,
+    gap: 24,
+
+    backgroundColor: '#ffffff'
   },
   item: {
     marginBottom: 16

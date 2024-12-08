@@ -1,16 +1,18 @@
 import styled from 'styled-components/native'
 
-export const Wrapper = styled.View``
-
+export const Wrapper = styled.View`
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+`
 export const Reason = styled.View`
-  height: 26px;
-  background-color: #ffff;
   position: absolute;
   align-items: center;
   justify-content: center;
   z-index: 1;
   align-self: center;
-  bottom: 0;
+  bottom: -4px;
   padding: 5px 10px;
   border-radius: 5px;
 `
